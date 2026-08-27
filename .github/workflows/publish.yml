@@ -2,17 +2,12 @@ name: Publish to npm
 
 on:
   workflow_dispatch:
-    inputs:
-      provenance:
-        description: "Attach SLSA provenance (disable on the first publish)"
-        type: boolean
-        default: true
   push:
     tags:
       - "v*"
 
 permissions:
-  id-token: write # Required for OIDC / npm provenance
+  id-token: write # Required for OIDC
   contents: read
 
 jobs:
@@ -30,14 +25,4 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-
-      - name: Publish
-        run: |
-          if [ "$PROVENANCE" = "true" ]; then
-            npm publish
-          else
-            npm publish --provenance=false
-          fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          PROVENANCE: ${{ github.event.inputs.provenance || 'true' }}
+      - run: npm publish

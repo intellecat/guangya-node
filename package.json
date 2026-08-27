@@ -23,6 +23,10 @@
   },
   "keywords": ["guangyapan", "guangya", "cloud", "client"],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intellecat/guangya-node.git"
+  },
   "devDependencies": {
     "@types/node": "^20.14.0",
     "typescript": "^5.5.0"
