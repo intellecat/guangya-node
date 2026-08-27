@@ -1,7 +1,9 @@
 node_modules/
 dist/
+dist-test/
 *.tsbuildinfo
 .env
 *.env
 gy_token.json
 *.token
+*.tgz
