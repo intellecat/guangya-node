@@ -1,6 +1,6 @@
 {
   "name": "guangya",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "光鸭云盘 (guangyapan) C-end API client for Node.js",
   "type": "module",
   "main": "./dist/index.js",
@@ -11,7 +11,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "!dist/test"],
+  "files": [
+    "dist",
+    "!dist/test"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit",
@@ -21,7 +24,12 @@
   "engines": {
     "node": ">=18"
   },
-  "keywords": ["guangyapan", "guangya", "cloud", "client"],
+  "keywords": [
+    "guangyapan",
+    "guangya",
+    "cloud",
+    "client"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
